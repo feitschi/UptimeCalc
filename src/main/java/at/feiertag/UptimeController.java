@@ -14,10 +14,15 @@ public class UptimeController {
     @GET
     @Path("/{uptime}")
     @Produces(MediaType.TEXT_PLAIN)
-    public String calculateUptime(@PathParam("uptime") double uptime){
-        double minutesOfMonth = 60*24*30;
-        double definedUptimeInPercent = uptime/100;
+    public String calculateUptime(@PathParam("uptime") double uptime) {
+        double minutesOfMonth = 60 * 24 * 30;
+        double definedUptimeInPercent = uptime / 100;
         double uptimeInMinutes = minutesOfMonth * definedUptimeInPercent;
         return String.format("%.2f", uptimeInMinutes);
+    }
+
+    @GET
+    public String calculateUptime() {
+        return this.calculateUptime(99.95);
     }
 }

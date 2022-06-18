@@ -18,7 +18,6 @@ public class UptimeController {
         double minutesOfMonth = 60*24*30;
         double definedUptimeInPercent = uptime/100;
         double uptimeInMinutes = minutesOfMonth * definedUptimeInPercent;
-        String result = String.format("%.2f", uptimeInMinutes);
-        return result;
+        return String.format("%.2f", uptimeInMinutes);
     }
 }

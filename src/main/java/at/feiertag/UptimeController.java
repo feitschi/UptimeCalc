@@ -20,7 +20,7 @@ public class UptimeController {
         double uptimeInMinutes = minutesOfMonth * definedUptimeInPercent;
         return String.format("%.2f", uptimeInMinutes);
     }
-
+    //default - falls kein Input
     @GET
     public String calculateUptime() {
         return this.calculateUptime(99.95);
